@@ -50,4 +50,9 @@ public class InputManager : MonoBehaviour
         return _playerControl.Player.Jump.triggered;
     }
 
+    public bool PlayerShooting()
+    {
+        return _playerControl.Player.Shoot.triggered;
+    }
+
 }

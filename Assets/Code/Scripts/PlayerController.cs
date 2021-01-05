@@ -33,26 +33,24 @@ public class PlayerController : MonoBehaviour
             _playerVelocity.y = 0f;
         }
 
-        Vector2 movement = _inputManager.GetPlayerMovement();//new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector2 movement = _inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move = _cameraTransform.forward * move.z + _cameraTransform.right * move.x;
         move.y = 0f;
         _controller.Move(move * Time.deltaTime * _playerSpeed);
 
-        /*
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
-        */
-
         // Changes the height position of the player..
-        if (_inputManager.PlayerJumpedThisFrame()/*Input.GetButtonDown("Jump")*/ && _groundedPlayer)
+        if (_inputManager.PlayerJumpedThisFrame() && _groundedPlayer)
         {
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
         }
 
         _playerVelocity.y += _gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
+
+        if (_inputManager.PlayerShooting())
+        {
+            Debug.Log("Player is Shooting");
+        }
     }
 }

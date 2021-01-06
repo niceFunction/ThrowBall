@@ -21,8 +21,8 @@ public class UIController : MonoBehaviour
 
     private Animation _anim;
 
-    private int _redBalls = 0;
-    private int _blueBalls = 0;
+    public int redBalls = 0;
+    public int blueBalls = 0;
 
 
     private void Awake()
@@ -49,15 +49,15 @@ public class UIController : MonoBehaviour
         int intTimer = (int)startTime;
         UpdateTimer(intTimer);
 
-        if (_blueBalls == 0 && _redBalls == 0)
+        if (blueBalls == 0 && redBalls == 0)
         {
             PickUpNone();
         }
-        else if (_blueBalls == 0 && _redBalls != 0)
+        else if (blueBalls == 0 && redBalls != 0)
         {
             PickUpRed();
         }
-        else if (_blueBalls != 0 && _redBalls == 0)
+        else if (blueBalls != 0 && redBalls == 0)
         {
             PickUpBlue();
         }
@@ -75,14 +75,14 @@ public class UIController : MonoBehaviour
 
     public void UpdateBlueCounter(int newValue)
     {
-        _blueBalls = _blueBalls + (newValue);
-        blueCounter.SetText(_blueBalls.ToString("0"));
+        blueBalls = blueBalls + (newValue);
+        blueCounter.SetText(blueBalls.ToString("0"));
     }
 
     public void UpdateRedCounter(int newValue)
     {
-        _redBalls = _redBalls + (newValue);
-        redCounter.SetText(_redBalls.ToString("0"));
+        redBalls = redBalls + (newValue);
+        redCounter.SetText(redBalls.ToString("0"));
     }
 
     public void PickUpRed()

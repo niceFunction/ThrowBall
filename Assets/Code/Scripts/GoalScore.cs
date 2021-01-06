@@ -20,13 +20,8 @@ public class GoalScore : MonoBehaviour
     {
         if (_scoredGoal)
         {
-            respawnInterval -= Time.deltaTime;
-            if (respawnInterval <= 0)
-            {
-                parentObject.SetActive(true);
-                _scoredGoal = false;
-            }
-            
+            parentObject.SetActive(true);
+            _scoredGoal = false;
         }
     }
 
@@ -38,12 +33,7 @@ public class GoalScore : MonoBehaviour
             respawnInterval = _respawnInterval; // Set interval timer to default
             ScoreManager.Instance.AddToList(parentObject, respawnInterval);
             parentObject.SetActive(false); // Inactivate parent
-        }/*
-        if (other.CompareTag("BlueBall") && !_scoredGoal)
-        {
-            _scoredGoal = true; // Scored a goal
-            respawnInterval = _respawnInterval; // Set interval timer to default
-            parentObject.SetActive(false); // Inactivate parent
-        }*/
+        }
+
     }
 }

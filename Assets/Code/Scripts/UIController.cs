@@ -5,7 +5,7 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public static UIController instance;
+    public static UIController Instance;
 
     public float startTime = 500;
 
@@ -27,7 +27,7 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     void Start()
@@ -53,10 +53,12 @@ public class UIController : MonoBehaviour
         {
             redBalls = 0;
         }
+
         if (blueBalls < 0)
         {
             blueBalls = 0;
         }
+
         if (blueBalls == 0 && redBalls == 0)
         {
             PickUpNone();

@@ -44,11 +44,9 @@ public class BallSpawner : MonoBehaviour
 
             for (int i = 0; i < randomBallAmount; i++)
             {
-                //Debug.Log("Balls spawned");
                 Debug.Log("Random Ball amount is: " + randomBallAmount);
                 GameObject redBallClone = Instantiate(_redBall, transform.position, Quaternion.identity);
                 Destroy(redBallClone, 5f);
-                //Debug.Log("Destroying Unused balls");
             }
         }
     }

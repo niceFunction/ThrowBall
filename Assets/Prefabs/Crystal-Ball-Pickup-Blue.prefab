@@ -27,6 +27,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -71,5 +75,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483983, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11826d08c72a8cb46b7c3dd2b69f7058, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}

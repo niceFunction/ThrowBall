@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: pickupType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 460783637132763577, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 460783637132763577, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 460783637132763577, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Color.g
+      value: 0.61211824
+      objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue

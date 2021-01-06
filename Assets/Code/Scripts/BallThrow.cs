@@ -25,15 +25,12 @@ public class BallThrow : MonoBehaviour
     void Start()
     {
         _inputManager = InputManager.Instance;
-        //_ballBody = GetComponent<Rigidbody>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
         ShootBall();
-
     }
 
     void ShootBall()

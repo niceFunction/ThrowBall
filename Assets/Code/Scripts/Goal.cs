@@ -17,7 +17,8 @@ public class Goal : MonoBehaviour
     private float startTime;
     private float journeyLength;
     bool isWaiting;
-
+    public bool isStatic;
+    public bool willRespawn = true;
 
 
     void Start()
@@ -32,10 +33,11 @@ public class Goal : MonoBehaviour
         endPoint.parent = null;
     }
 
-
     void FixedUpdate()
     {
-        Move();
+        if (!isStatic) { 
+            Move();
+        }
     }
 
     private void Move()

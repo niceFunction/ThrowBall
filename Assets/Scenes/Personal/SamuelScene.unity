@@ -295,7 +295,7 @@ GameObject:
   m_Layer: 0
   m_Name: BallSpawnerController
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -312,8 +312,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimer: 3
-  _redBall: {fileID: 3991308589034483978, guid: 88375cf2be1c31a418ca330084055986, type: 3}
-  _blueBall: {fileID: 3991308589034483978, guid: 14385f4a6725ace4ca029cd66987261d, type: 3}
+  ballsToSpawn: 5
+  _redBall: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+  _blueBall: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!4 &575898985
 Transform:
   m_ObjectHideFlags: 0
@@ -322,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575898983}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 5.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1555,7 +1556,7 @@ GameObject:
   - component: {fileID: 2100525637}
   - component: {fileID: 2100525636}
   - component: {fileID: 2100525635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

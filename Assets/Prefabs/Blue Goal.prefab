@@ -6880,3 +6880,4 @@ MonoBehaviour:
   parentObject: {fileID: 5901484583799673061}
   respawnInterval: 5
   isRed: 0
+  destroyEffect: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}

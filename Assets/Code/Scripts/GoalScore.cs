@@ -40,6 +40,7 @@ public class GoalScore : MonoBehaviour
             {
                 _scoredGoal = true; // Scored a goal
                 ScoreManager.Instance.AddToList(parentObject, respawnInterval);
+                Instantiate(destroyEffect, transform.position, Quaternion.identity);
                 UIController.Instance.UpdateScore(scorePoints);
                 parentObject.SetActive(false);
             }

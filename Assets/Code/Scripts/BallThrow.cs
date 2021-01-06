@@ -11,7 +11,9 @@ public class BallThrow : MonoBehaviour
     private Camera _playerCamera;
 
     [SerializeField]
-    private GameObject _ball;
+    private GameObject _redBall;
+    [SerializeField]
+    private GameObject _blueBall;
 
     [SerializeField]
     private Rigidbody _ballBody;
@@ -35,15 +37,42 @@ public class BallThrow : MonoBehaviour
 
     void ShootBall()
     {
-        if (_inputManager.PlayerShooting())
+        if (_inputManager.PlayerShootingRed())
         {
-            Debug.Log("Ball is created");
-            GameObject ballClone;
-            ballClone = Instantiate(_ball, _spawnPoint.transform.position, this.transform.rotation);
+            if (UIController.Instance.redBalls != 0)
+            {
+                Debug.Log("Red Ball is thrown");
+                GameObject redBallClone;
+                redBallClone = Instantiate(_redBall, _spawnPoint.transform.position, this.transform.rotation);
 
-            ballClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
+                redBallClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
 
-            Destroy(ballClone, 5.0f);
+                Destroy(redBallClone, 5.0f);
+                UIController.Instance.UpdateRedCounter(-1);
+            }
+            else if(UIController.Instance.redBalls <= 0)
+            {
+                Debug.Log("No Red Balls available!");
+            }    
+        }
+
+        if (_inputManager.PlayerShootingBlue())
+        {
+            if (UIController.Instance.blueBalls != 0)
+            {
+                Debug.Log("Blue Ball is thrown");
+                GameObject blueBallClone;
+                blueBallClone = Instantiate(_blueBall, _spawnPoint.transform.position, this.transform.rotation);
+
+                blueBallClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
+
+                Destroy(blueBallClone, 5.0f);
+                UIController.Instance.UpdateBlueCounter(-1);
+            }
+            else if (UIController.Instance.blueBalls <= 0)
+            {
+                Debug.Log("No Blue Balls available!");
+            }
         }
     }
 }

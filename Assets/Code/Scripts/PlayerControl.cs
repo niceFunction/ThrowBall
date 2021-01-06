@@ -43,9 +43,17 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Shoot"",
+                    ""name"": ""Shoot_Red"",
                     ""type"": ""Button"",
                     ""id"": ""b074c520-7d17-48d5-baf7-e7c3e0c682b9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Shoot_Blue"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0fb4840-8238-4400-8010-781117de9cb7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -136,7 +144,18 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Shoot"",
+                    ""action"": ""Shoot_Red"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3585ac27-85d8-46aa-ad2b-8b2cf1825547"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot_Blue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -150,7 +169,8 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_Shoot_Red = m_Player.FindAction("Shoot_Red", throwIfNotFound: true);
+        m_Player_Shoot_Blue = m_Player.FindAction("Shoot_Blue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -203,7 +223,8 @@ public class @PlayerControl : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_Shoot_Red;
+    private readonly InputAction m_Player_Shoot_Blue;
     public struct PlayerActions
     {
         private @PlayerControl m_Wrapper;
@@ -211,7 +232,8 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @Shoot_Red => m_Wrapper.m_Player_Shoot_Red;
+        public InputAction @Shoot_Blue => m_Wrapper.m_Player_Shoot_Blue;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,9 +252,12 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
-                @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
-                @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @Shoot_Red.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Red;
+                @Shoot_Red.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Red;
+                @Shoot_Red.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Red;
+                @Shoot_Blue.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
+                @Shoot_Blue.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
+                @Shoot_Blue.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -246,9 +271,12 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Shoot.started += instance.OnShoot;
-                @Shoot.performed += instance.OnShoot;
-                @Shoot.canceled += instance.OnShoot;
+                @Shoot_Red.started += instance.OnShoot_Red;
+                @Shoot_Red.performed += instance.OnShoot_Red;
+                @Shoot_Red.canceled += instance.OnShoot_Red;
+                @Shoot_Blue.started += instance.OnShoot_Blue;
+                @Shoot_Blue.performed += instance.OnShoot_Blue;
+                @Shoot_Blue.canceled += instance.OnShoot_Blue;
             }
         }
     }
@@ -258,6 +286,7 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnShoot(InputAction.CallbackContext context);
+        void OnShoot_Red(InputAction.CallbackContext context);
+        void OnShoot_Blue(InputAction.CallbackContext context);
     }
 }

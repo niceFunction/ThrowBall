@@ -30,9 +30,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Shoot",
+                    "name": "Shoot_Red",
                     "type": "Button",
                     "id": "b074c520-7d17-48d5-baf7-e7c3e0c682b9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Shoot_Blue",
+                    "type": "Button",
+                    "id": "a0fb4840-8238-4400-8010-781117de9cb7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -123,7 +131,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Shoot",
+                    "action": "Shoot_Red",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3585ac27-85d8-46aa-ad2b-8b2cf1825547",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot_Blue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

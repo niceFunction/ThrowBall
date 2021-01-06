@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 2823648180476396714}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 2823648179810433701}
   _playerCamera: {fileID: 5662676028357337795, guid: b787fd2c6b742c241a428f1572eb28a2, type: 3}
-  _ball: {fileID: 3991308589034483978, guid: 88375cf2be1c31a418ca330084055986, type: 3}
+  _redBall: {fileID: 3991308589034483978, guid: 88375cf2be1c31a418ca330084055986, type: 3}
+  _blueBall: {fileID: 3991308589034483978, guid: 14385f4a6725ace4ca029cd66987261d, type: 3}
   _ballBody: {fileID: 1649216743203693096, guid: 88375cf2be1c31a418ca330084055986, type: 3}
   _throwForce: 3000

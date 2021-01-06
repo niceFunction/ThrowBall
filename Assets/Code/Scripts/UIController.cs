@@ -12,7 +12,7 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI score;
     public TextMeshProUGUI timer;
     public TextMeshProUGUI blueCounter;
-    public TextMeshProUGUI yellowCounter;
+    public TextMeshProUGUI redCounter;
 
     public GameObject blueBall;
     public GameObject redBall;
@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
     {
         UpdateScore(0);
         UpdateBlueCounter(0);
-        UpdateYellowCounter(0);
+        UpdateRedCounter(0);
 
         blueBall.SetActive(false);
         redBall.SetActive(false);
@@ -53,7 +53,14 @@ public class UIController : MonoBehaviour
         {
             PickUpNone();
         }
-        
+        else if (_blueBalls == 0 && _redBalls != 0)
+        {
+            PickUpRed();
+        }
+        else if (_blueBalls != 0 && _redBalls == 0)
+        {
+            PickUpBlue();
+        }
     }
 
     public void UpdateTimer(int newValue)
@@ -72,10 +79,10 @@ public class UIController : MonoBehaviour
         blueCounter.SetText(_blueBalls.ToString("0"));
     }
 
-    public void UpdateYellowCounter(int newValue)
+    public void UpdateRedCounter(int newValue)
     {
         _redBalls = _redBalls + (newValue);
-        yellowCounter.SetText(_redBalls.ToString("0"));
+        redCounter.SetText(_redBalls.ToString("0"));
     }
 
     public void PickUpRed()
@@ -84,8 +91,6 @@ public class UIController : MonoBehaviour
         blueBall.SetActive(false);
         redBall.SetActive(true);
         noBall.SetActive(false);
-
-        UpdateYellowCounter(1);
     }
 
     public void PickUpBlue()
@@ -94,8 +99,6 @@ public class UIController : MonoBehaviour
         blueBall.SetActive(true);
         redBall.SetActive(false);
         noBall.SetActive(false);
-
-        UpdateBlueCounter(1);
     }
 
     public void PickUpNone()

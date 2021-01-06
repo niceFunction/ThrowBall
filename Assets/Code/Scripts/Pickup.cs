@@ -26,10 +26,12 @@ public class Pickup : MonoBehaviour
             Destroy(gameObject);
             if ( pickupType == 1 ) { 
                 UIController.instance.PickUpRed();
+                UIController.instance.UpdateRedCounter(1);
             }
             if (pickupType == 2)
             {
                 UIController.instance.PickUpBlue();
+                UIController.instance.UpdateBlueCounter(1);
             }
         }
     }

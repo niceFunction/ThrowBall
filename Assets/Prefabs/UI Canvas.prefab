@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 5991442599404710601}
   - component: {fileID: 3926723379015709750}
   m_Layer: 5
-  m_Name: Yellow Ball Icon
+  m_Name: Red Ball Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +688,7 @@ MonoBehaviour:
   score: {fileID: 7578134840063007105}
   timer: {fileID: 7154786660006802893}
   blueCounter: {fileID: 8870469698386944176}
-  yellowCounter: {fileID: 187219749230255426}
+  redCounter: {fileID: 187219749230255426}
   blueBall: {fileID: 4508638462753985757}
   redBall: {fileID: 6449860041527725999}
   noBall: {fileID: 4463810433024970338}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 6147596591433538969}
   - component: {fileID: 187219749230255426}
   m_Layer: 0
-  m_Name: Yellow count
+  m_Name: Red count
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

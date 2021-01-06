@@ -16,7 +16,7 @@ public class BallThrow : MonoBehaviour
     [SerializeField]
     private Rigidbody _ballBody;
 
-    [SerializeField, Range(0.5f, 50000f)]
+    [SerializeField, Range(0.5f, 3000f)]
     private float _throwForce = 10f;
 
     private InputManager _inputManager;
@@ -42,6 +42,8 @@ public class BallThrow : MonoBehaviour
             ballClone = Instantiate(_ball, _spawnPoint.transform.position, this.transform.rotation);
 
             ballClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
+
+            Destroy(ballClone, 5.0f);
         }
     }
 }

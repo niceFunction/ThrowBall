@@ -1,0 +1,9 @@
+Make sure to:
+
+1. In the Player prefab (In the "Ball Throw" script), add "Main Camera" to Player camera
+2. Have a Cinemachine Virtual Camera added to the scene (who's inside the player character)
+3. Add to the Cinemachine Virtual Camera, the "Cinemachine POV Extension" script
+4. If necessary, Add the "Crystal Ball" prefab as a reference to "Ball" & "Ball Body"
+
+Side Note:
+Player prefab have some of the references needed if it's missing something, otherwise check the "Crystal Ball" prefab

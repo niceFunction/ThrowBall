@@ -18,7 +18,17 @@ public class UIController : MonoBehaviour
     public GameObject redBall;
     public GameObject FPSarms;
 
-    private Animation _anim;
+    /* RED FIRST TIME ANIMATION */
+    public GameObject redPickupAnim;
+    private float _redPickupAnimTime = 1f;
+    private bool _redPickupAnimActive;
+    private Animation _animRed;
+
+    /* BLUE FIRST TIME ANIMATION */
+    public GameObject bluePickupAnim;
+    private float _bluePickupAnimTime = 1f;
+    private bool _bluePickupAnimActive;
+    private Animation _animBlue;
 
     public int redBalls = 0;
     public int blueBalls = 0;
@@ -39,7 +49,8 @@ public class UIController : MonoBehaviour
         blueBall.SetActive(false);
         redBall.SetActive(false);
 
-        _anim = FPSarms.GetComponent<Animation>();
+        _animRed = redPickupAnim.GetComponent<Animation>();
+        _animBlue = bluePickupAnim.GetComponent<Animation>();
     }
 
     void Update()
@@ -68,6 +79,34 @@ public class UIController : MonoBehaviour
         {
             PickUpBlue();
         }
+        if (_redPickupAnimActive)
+        {
+            _redPickupAnimTime -= Time.deltaTime;
+            if (_redPickupAnimTime <= 0)
+            {
+                _redPickupAnimActive = false;
+                _redPickupAnimTime = 1f;
+                if (redBalls > 0) { 
+                    redBall.SetActive(true);
+                }
+                redPickupAnim.SetActive(false);
+            }
+        }
+        if (_bluePickupAnimActive)
+        {
+            _bluePickupAnimTime -= Time.deltaTime;
+            if (_bluePickupAnimTime <= 0)
+            {
+                _bluePickupAnimActive = false;
+                _bluePickupAnimTime = 1f;
+                if (blueBalls > 0)
+                {
+                    blueBall.SetActive(true);
+                }
+                bluePickupAnim.SetActive(false);
+            }
+        }
+
     }
 
     public void UpdateTimer(int newValue)
@@ -95,19 +134,27 @@ public class UIController : MonoBehaviour
 
     public void PickUpRed()
     {
-        //_anim.Play("FPS_unequp");
-        redBall.SetActive(true);
+        if (redBalls == 0) {
+            redPickupAnim.SetActive(true);
+            redBall.SetActive(false);
+            _redPickupAnimActive = true;
+            _animRed.Play("RedPickUpAnimation");
+        }
     }
 
     public void PickUpBlue()
     {
-        //_anim.Play("FPS_unequp");
-        blueBall.SetActive(true);
+        if (blueBalls == 0)
+        {
+            bluePickupAnim.SetActive(true);
+            blueBall.SetActive(false);
+            _bluePickupAnimActive = true;
+            _animBlue.Play("BluePickUpAnimation");
+        }
     }
 
     public void PickUpNone()
     {
-        //_anim.Play("FPS_unequp");
         blueBall.SetActive(false);
         redBall.SetActive(false);
     }

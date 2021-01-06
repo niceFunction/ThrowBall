@@ -16,13 +16,13 @@ public class UIController : MonoBehaviour
 
     public GameObject blueBall;
     public GameObject redBall;
-    public GameObject noBall;
     public GameObject FPSarms;
 
     private Animation _anim;
 
     public int redBalls = 0;
     public int blueBalls = 0;
+    public int highScore = 0;
 
 
     private void Awake()
@@ -38,7 +38,6 @@ public class UIController : MonoBehaviour
 
         blueBall.SetActive(false);
         redBall.SetActive(false);
-        noBall.SetActive(true);
 
         _anim = FPSarms.GetComponent<Animation>();
     }
@@ -49,21 +48,19 @@ public class UIController : MonoBehaviour
         int intTimer = (int)startTime;
         UpdateTimer(intTimer);
 
-        if (redBalls < 0)
+        if (redBalls <= 0)
         {
             redBalls = 0;
+            redBall.SetActive(false);
         }
 
-        if (blueBalls < 0)
+        if (blueBalls <= 0)
         {
             blueBalls = 0;
+            blueBall.SetActive(false);
         }
 
-        if (blueBalls == 0 && redBalls == 0)
-        {
-            PickUpNone();
-        } 
-        else if (blueBalls == 0 && redBalls != 0)
+        if (blueBalls == 0 && redBalls != 0)
         {
             PickUpRed();
         }
@@ -80,7 +77,8 @@ public class UIController : MonoBehaviour
 
     public void UpdateScore(int newValue)
     {
-        score.SetText(newValue.ToString("0000"));
+        highScore = highScore + (newValue);
+        score.SetText(highScore.ToString("0000"));
     }
 
     public void UpdateBlueCounter(int newValue)
@@ -98,17 +96,13 @@ public class UIController : MonoBehaviour
     public void PickUpRed()
     {
         //_anim.Play("FPS_unequp");
-        blueBall.SetActive(false);
         redBall.SetActive(true);
-        noBall.SetActive(false);
     }
 
     public void PickUpBlue()
     {
         //_anim.Play("FPS_unequp");
         blueBall.SetActive(true);
-        redBall.SetActive(false);
-        noBall.SetActive(false);
     }
 
     public void PickUpNone()
@@ -116,7 +110,6 @@ public class UIController : MonoBehaviour
         //_anim.Play("FPS_unequp");
         blueBall.SetActive(false);
         redBall.SetActive(false);
-        noBall.SetActive(true);
     }
 
 }

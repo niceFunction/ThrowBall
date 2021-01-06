@@ -13,9 +13,6 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
-    public List<GameObject> goalObjects { get; set; }
-    public List<float> goalIntervals { get; set; }
-
     public List<HighScoreEntry> highscoreList = new List<HighScoreEntry>();
 
     private void Awake()
@@ -23,13 +20,6 @@ public class ScoreManager : MonoBehaviour
         Instance = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        goalObjects = new List<GameObject>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < highscoreList.Count; i++)
@@ -45,8 +35,6 @@ public class ScoreManager : MonoBehaviour
 
     public void AddToList(GameObject goalObject, float spawnInterval)
     {
-        //goalObjects.Add(goalObject);
-        //goalIntervals.Add(spawnInterval);
         AddHighScore(goalObject, spawnInterval);
     }
 

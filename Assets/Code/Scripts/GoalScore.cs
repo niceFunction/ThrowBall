@@ -8,13 +8,8 @@ public class GoalScore : MonoBehaviour
     public int scorePoints = 100;
     public GameObject parentObject;
     public float respawnInterval;
-    private float _respawnInterval;
+    public bool isRed = true;
     private bool _scoredGoal;
-
-    void Start()
-    {
-        _respawnInterval = respawnInterval;
-    }
 
     void Update()
     {
@@ -27,12 +22,23 @@ public class GoalScore : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("RedBall") && !_scoredGoal)
+        if (isRed) { 
+            if (other.CompareTag("RedBall") && !_scoredGoal)
+            {
+                _scoredGoal = true; // Scored a goal
+                ScoreManager.Instance.AddToList(parentObject, respawnInterval);
+                UIController.Instance.UpdateScore(scorePoints);
+                parentObject.SetActive(false);
+            }
+        } else
         {
-            _scoredGoal = true; // Scored a goal
-            respawnInterval = _respawnInterval; // Set interval timer to default
-            ScoreManager.Instance.AddToList(parentObject, respawnInterval);
-            parentObject.SetActive(false); // Inactivate parent
+            if (other.CompareTag("BlueBall") && !_scoredGoal)
+            {
+                _scoredGoal = true; // Scored a goal
+                ScoreManager.Instance.AddToList(parentObject, respawnInterval);
+                UIController.Instance.UpdateScore(scorePoints);
+                parentObject.SetActive(false);
+            }
         }
 
     }

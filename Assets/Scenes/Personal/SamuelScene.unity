@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1 &575898983
@@ -298,7 +302,7 @@ GameObject:
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &575898984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1 &694956809
@@ -485,6 +493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.0899997
@@ -541,6 +553,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -655,6 +671,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -845,6 +865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1001 &1297638307
@@ -999,6 +1023,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1 &1361507644
@@ -1100,6 +1128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1 &1620708190
@@ -1155,6 +1187,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1212,6 +1248,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1314,6 +1354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1001 &1843575692
@@ -1371,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1001 &1848820343
@@ -1383,6 +1431,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1485,6 +1537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal-Ball-Pickup-Blue (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5773282585898759557, guid: ff745e29a92007249832ed9c07867229, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff745e29a92007249832ed9c07867229, type: 3}
 --- !u!1001 &2020088889
@@ -1497,6 +1553,10 @@ PrefabInstance:
     - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Name
       value: Crystal-Ball-Pickup (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991308589034483978, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3991308589034483982, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_LocalPosition.x

@@ -40,13 +40,16 @@ public class BallSpawner : MonoBehaviour
         {
             Debug.Log("Timer reached ZERO, resetting Timer");
             _internalSpawnTimer = spawnTimer;
+            var randomBallAmount = Random.Range(0, ballsToSpawn);
 
-            for (int i = 0; i < ballsToSpawn; i++)
+            for (int i = 0; i < randomBallAmount; i++)
             {
-                Debug.Log("Balls spawned");
-                Instantiate(_redBall, transform.position, Quaternion.identity);
+                //Debug.Log("Balls spawned");
+                Debug.Log("Random Ball amount is: " + randomBallAmount);
+                GameObject redBallClone = Instantiate(_redBall, transform.position, Quaternion.identity);
+                Destroy(redBallClone, 5f);
+                //Debug.Log("Destroying Unused balls");
             }
-
         }
     }
 }

@@ -5,7 +5,10 @@ using UnityEngine;
 public class BallThrow : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _spawnPoint;
+    private GameObject _blueSpawnPoint;
+
+    [SerializeField]
+    private GameObject _redSpawnPoint;
 
     [SerializeField]
     private Camera _playerCamera;
@@ -43,7 +46,7 @@ public class BallThrow : MonoBehaviour
             {
                 Debug.Log("Red Ball is thrown");
                 GameObject redBallClone;
-                redBallClone = Instantiate(_redBall, _spawnPoint.transform.position, this.transform.rotation);
+                redBallClone = Instantiate(_redBall, _redSpawnPoint.transform.position, this.transform.rotation);
 
                 redBallClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
 
@@ -62,7 +65,7 @@ public class BallThrow : MonoBehaviour
             {
                 Debug.Log("Blue Ball is thrown");
                 GameObject blueBallClone;
-                blueBallClone = Instantiate(_blueBall, _spawnPoint.transform.position, this.transform.rotation);
+                blueBallClone = Instantiate(_blueBall, _blueSpawnPoint.transform.position, this.transform.rotation);
 
                 blueBallClone.GetComponent<Rigidbody>().AddForce(_playerCamera.transform.forward * _throwForce);
 

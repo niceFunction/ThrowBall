@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnPoint: {fileID: 2823648179810433701}
-  _playerCamera: {fileID: 0}
+  _playerCamera: {fileID: 5662676028357337795, guid: b787fd2c6b742c241a428f1572eb28a2, type: 3}
   _ball: {fileID: 3991308589034483978, guid: 88375cf2be1c31a418ca330084055986, type: 3}
   _ballBody: {fileID: 1649216743203693096, guid: 88375cf2be1c31a418ca330084055986, type: 3}
   _throwForce: 3000

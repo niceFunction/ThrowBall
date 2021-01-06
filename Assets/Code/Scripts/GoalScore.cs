@@ -9,7 +9,7 @@ public class GoalScore : MonoBehaviour
     public GameObject parentObject;
     public float respawnInterval;
     public bool isRed = true;
-    public GameObject destroyEffect;
+    //public GameObject destroyEffect;
     private bool _scoredGoal;
 
     void Update()
@@ -30,7 +30,7 @@ public class GoalScore : MonoBehaviour
                 _scoredGoal = true; // Scored a goal
                 ScoreManager.Instance.AddToList(parentObject, respawnInterval);
                 UIController.Instance.UpdateScore(scorePoints);
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                //Instantiate(destroyEffect, transform.position, Quaternion.identity);
                 parentObject.SetActive(false);
             }
         } 
@@ -40,7 +40,7 @@ public class GoalScore : MonoBehaviour
             {
                 _scoredGoal = true; // Scored a goal
                 ScoreManager.Instance.AddToList(parentObject, respawnInterval);
-                Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                //Instantiate(destroyEffect, transform.position, Quaternion.identity);
                 UIController.Instance.UpdateScore(scorePoints);
                 parentObject.SetActive(false);
             }

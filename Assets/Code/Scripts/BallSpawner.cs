@@ -8,11 +8,11 @@ public class BallSpawner : MonoBehaviour
     public float spawnTimer;
     private float _internalSpawnTimer;
 
-    // How many RED balls do you want to spawn?
+    // RED & BLUE balls should use same possible amount
     private int _redBallAmount;
-
-    // How many BLUE balls do you want to spawn?
     private int _blueBallAmount;
+
+    public int ballsToSpawn;
 
     [SerializeField]
     private GameObject _redBall;
@@ -40,6 +40,13 @@ public class BallSpawner : MonoBehaviour
         {
             Debug.Log("Timer reached ZERO, resetting Timer");
             _internalSpawnTimer = spawnTimer;
+
+            for (int i = 0; i < ballsToSpawn; i++)
+            {
+                Debug.Log("Balls spawned");
+                Instantiate(_redBall, transform.position, Quaternion.identity);
+            }
+
         }
     }
 }

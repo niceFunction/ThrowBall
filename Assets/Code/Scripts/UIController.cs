@@ -68,14 +68,14 @@ public class UIController : MonoBehaviour
 
     public void UpdateBlueCounter(int newValue)
     {
-        _blueBalls = _blueBalls + newValue;
-        blueCounter.SetText(newValue.ToString("0"));
+        _blueBalls = _blueBalls + (newValue);
+        blueCounter.SetText(_blueBalls.ToString("0"));
     }
 
     public void UpdateYellowCounter(int newValue)
     {
-        _redBalls = _redBalls + newValue;
-        yellowCounter.SetText(newValue.ToString("0"));
+        _redBalls = _redBalls + (newValue);
+        yellowCounter.SetText(_redBalls.ToString("0"));
     }
 
     public void PickUpRed()

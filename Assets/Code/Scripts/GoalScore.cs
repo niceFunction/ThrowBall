@@ -44,7 +44,13 @@ public class GoalScore : MonoBehaviour
                     }
                     UIController.Instance.UpdateScore(scorePoints);
                     //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+                    Destroy(other.gameObject);
+                    Debug.Log("Shot red ball at red target");
                     parentObject.SetActive(false);
+                } 
+                else if (other.CompareTag("BlueBall")) 
+                {
+                    Debug.Log("Shot blue ball at red target");
                 }
             }
             else
@@ -58,7 +64,13 @@ public class GoalScore : MonoBehaviour
                     }
                     //Instantiate(destroyEffect, transform.position, Quaternion.identity);
                     UIController.Instance.UpdateScore(scorePoints);
+                    Destroy(other.gameObject);
+                    Debug.Log("Shot blue ball at blue target");
                     parentObject.SetActive(false);
+                } 
+                else if (other.CompareTag("RedBall")) 
+                {
+                    Debug.Log("Shot red ball at blue target");
                 }
             }
         }

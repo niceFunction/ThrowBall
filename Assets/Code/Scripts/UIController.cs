@@ -49,10 +49,18 @@ public class UIController : MonoBehaviour
         int intTimer = (int)startTime;
         UpdateTimer(intTimer);
 
+        if (redBalls < 0)
+        {
+            redBalls = 0;
+        }
+        if (blueBalls < 0)
+        {
+            blueBalls = 0;
+        }
         if (blueBalls == 0 && redBalls == 0)
         {
             PickUpNone();
-        }
+        } 
         else if (blueBalls == 0 && redBalls != 0)
         {
             PickUpRed();

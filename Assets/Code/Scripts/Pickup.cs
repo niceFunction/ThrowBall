@@ -23,6 +23,7 @@ public class Pickup : MonoBehaviour
         if (other.CompareTag("Player") && !_isCollected)
         {
             _isCollected = true;
+            AudioManager.Instance.PlaySFX(0);
             Destroy(gameObject);
             if ( pickupType == 1 ) { 
                 UIController.Instance.PickUpRed();

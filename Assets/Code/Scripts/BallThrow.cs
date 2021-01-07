@@ -44,6 +44,7 @@ public class BallThrow : MonoBehaviour
         {
             if (UIController.Instance.redBalls != 0)
             {
+                AudioManager.Instance.PlaySFX(1);
                 Debug.Log("Red Ball is thrown");
                 GameObject redBallClone;
                 redBallClone = Instantiate(_redBall, _redSpawnPoint.transform.position, this.transform.rotation);
@@ -63,6 +64,7 @@ public class BallThrow : MonoBehaviour
         {
             if (UIController.Instance.blueBalls != 0)
             {
+                AudioManager.Instance.PlaySFX(1);
                 Debug.Log("Blue Ball is thrown");
                 GameObject blueBallClone;
                 blueBallClone = Instantiate(_blueBall, _blueSpawnPoint.transform.position, this.transform.rotation);

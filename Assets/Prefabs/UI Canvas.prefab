@@ -760,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4f18209834191f42913581be5b41802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTime: 500
+  startTime: 174
   score: {fileID: 7578134840063007105}
   timer: {fileID: 7154786660006802893}
   blueCounter: {fileID: 8870469698386944176}

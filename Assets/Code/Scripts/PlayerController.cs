@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private InputManager _inputManager;
     private Transform _cameraTransform;
 
+
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
@@ -38,6 +39,17 @@ public class PlayerController : MonoBehaviour
         move = _cameraTransform.forward * move.z + _cameraTransform.right * move.x;
         move.y = 0f;
         _controller.Move(move * Time.deltaTime * _playerSpeed);
+        
+        if (movement.y == 0 && movement.x == 0)
+        {
+            AudioManager.Instance.StopSFX(4);
+        } 
+        else
+        {
+            if (_groundedPlayer) { 
+                AudioManager.Instance.ActivateSFX(4);
+            }
+        }
 
         // Changes the height position of the player..
         if (_inputManager.PlayerJumpedThisFrame() && _groundedPlayer)

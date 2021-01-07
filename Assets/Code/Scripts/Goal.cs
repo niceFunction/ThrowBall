@@ -7,7 +7,7 @@ public class Goal : MonoBehaviour
 
     [SerializeField]
     float speed;
-
+    public float respawnInterval = 20;
     [SerializeField]
     Transform startPoint, endPoint;
     [SerializeField]

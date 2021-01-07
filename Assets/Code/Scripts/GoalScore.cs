@@ -7,16 +7,18 @@ public class GoalScore : MonoBehaviour
 
     public int scorePoints = 100;
     public GameObject parentObject;
-    public float respawnInterval;
+    
     public bool isRed = true;
     public bool isPurple;
     //public GameObject destroyEffect;
     private bool _scoredGoal;
     private bool _willRespawn;
+    private float _respawnInterval;
 
     void Start()
     {
         _willRespawn = parentObject.GetComponent<Goal>().willRespawn;
+        _respawnInterval = parentObject.GetComponent<Goal>().respawnInterval;
     }
 
     void Update()
@@ -40,7 +42,7 @@ public class GoalScore : MonoBehaviour
                 {
                     _scoredGoal = true; // Scored a goal
                     if (_willRespawn == true) { 
-                        ScoreManager.Instance.AddToList(parentObject, respawnInterval);
+                        ScoreManager.Instance.AddToList(parentObject, _respawnInterval);
                     }
                     UIController.Instance.UpdateScore(scorePoints);
                     //Instantiate(destroyEffect, transform.position, Quaternion.identity);
@@ -60,7 +62,7 @@ public class GoalScore : MonoBehaviour
                     _scoredGoal = true; // Scored a goal
                     if (_willRespawn == true)
                     {
-                        ScoreManager.Instance.AddToList(parentObject, respawnInterval);
+                        ScoreManager.Instance.AddToList(parentObject, _respawnInterval);
                     }
                     //Instantiate(destroyEffect, transform.position, Quaternion.identity);
                     UIController.Instance.UpdateScore(scorePoints);

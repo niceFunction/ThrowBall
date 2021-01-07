@@ -19,9 +19,9 @@ public class BallSpawner : MonoBehaviour
     [SerializeField]
     private GameObject _blueBall;
 
-    [SerializeField]
+    [Header("Box Area Spawn"), SerializeField, Tooltip("Where in the world is the psawn box positioned?")]
     private Vector3 _center;
-    [SerializeField]
+    [SerializeField, Tooltip("How big is the size of the spawn area?")]
     private Vector3 _size;
 
 

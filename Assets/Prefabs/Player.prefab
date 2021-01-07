@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &691318268183437705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2554918853176352834}
-  m_Layer: 0
-  m_Name: RedSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2554918853176352834
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691318268183437705}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.547, y: 0.36, z: 0.648}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2823648180476396726}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2823648179161621629
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,36 +29,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2823648180476396726}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2823648179810433701
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2823648179810433700}
-  m_Layer: 0
-  m_Name: BlueSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2823648179810433700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823648179810433701}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.547, y: 0.36, z: 0.648}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2823648180476396726}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2823648180410642894
 GameObject:
@@ -219,8 +159,6 @@ Transform:
   m_Children:
   - {fileID: 2823648180410642881}
   - {fileID: 2823648179161621628}
-  - {fileID: 2823648179810433700}
-  - {fileID: 2554918853176352834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -285,8 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57d0bfd5d203cef438815b3a8e11ca22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blueSpawnPoint: {fileID: 2823648179810433701}
-  _redSpawnPoint: {fileID: 691318268183437705}
+  _blueSpawnPoint: {fileID: 0}
+  _redSpawnPoint: {fileID: 0}
   _playerCamera: {fileID: 5662676028357337795, guid: b787fd2c6b742c241a428f1572eb28a2, type: 3}
   _redBall: {fileID: 3991308589034483978, guid: 88375cf2be1c31a418ca330084055986, type: 3}
   _blueBall: {fileID: 3991308589034483978, guid: 14385f4a6725ace4ca029cd66987261d, type: 3}

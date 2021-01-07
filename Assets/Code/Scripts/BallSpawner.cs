@@ -8,10 +8,6 @@ public class BallSpawner : MonoBehaviour
     public float spawnTimer;
     private float _internalSpawnTimer;
 
-    // RED & BLUE balls should use same possible amount
-    private int _redBallAmount;
-    private int _blueBallAmount;
-
     public int ballsToSpawn;
 
     [SerializeField]
@@ -19,6 +15,12 @@ public class BallSpawner : MonoBehaviour
 
     [SerializeField]
     private GameObject _blueBall;
+
+    [SerializeField]
+    private Vector3 _center;
+    [SerializeField]
+    private Vector3 _size;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +34,20 @@ public class BallSpawner : MonoBehaviour
         SpawnBalls();
     }
 
+    // TODO Look into making 2 different methods for spawn spawning Red balls & Blue balls
+
+    /// <summary>
+    /// Spawns the same amount of RED & BLUE balls
+    /// </summary>
     private void SpawnBalls()
     {
+
         _internalSpawnTimer -= Time.deltaTime;
+
+        Vector3 spawnAreaPosition = _center + new Vector3(
+            Random.Range(-_size.x / 2, _size.x / 2), 
+            Random.Range(-_size.y / 2, _size.y / 2), 
+            Random.Range(-_size.z / 2, _size.z / 2));
 
         if (_internalSpawnTimer <= 0)
         {
@@ -44,10 +57,19 @@ public class BallSpawner : MonoBehaviour
 
             for (int i = 0; i < randomBallAmount; i++)
             {
-                Debug.Log("Random Ball amount is: " + randomBallAmount);
-                GameObject redBallClone = Instantiate(_redBall, transform.position, Quaternion.identity);
-                Destroy(redBallClone, 5f);
+                Debug.Log("Random Ball per color is: " + randomBallAmount);
+                GameObject redBallClone = Instantiate(_redBall, spawnAreaPosition, Quaternion.identity);
+                GameObject blueBallClone = Instantiate(_blueBall, spawnAreaPosition, Quaternion.identity);
+                
+                Destroy(redBallClone, 10f);
+                Destroy(blueBallClone, 10f);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = new Color(0, 1, 0, 0.25f);
+        Gizmos.DrawCube(_center, _size);
     }
 }

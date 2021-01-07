@@ -836,6 +836,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3725122698646302706, guid: 6a7bcf3b7e973ab45bf08427fb9f350a, type: 3}
+      propertyPath: _destroyBallsTimer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3725122698646302707, guid: 6a7bcf3b7e973ab45bf08427fb9f350a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

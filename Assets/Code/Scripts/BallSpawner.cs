@@ -8,6 +8,9 @@ public class BallSpawner : MonoBehaviour
     public float spawnTimer;
     private float _internalSpawnTimer;
 
+    [SerializeField, Range(0.5f, 15f)]
+    private float _destroyBallsTimer;
+
     public int ballsToSpawn;
 
     [SerializeField]
@@ -61,8 +64,8 @@ public class BallSpawner : MonoBehaviour
                 GameObject redBallClone = Instantiate(_redBall, spawnAreaPosition, Quaternion.identity);
                 GameObject blueBallClone = Instantiate(_blueBall, spawnAreaPosition, Quaternion.identity);
                 
-                Destroy(redBallClone, 10f);
-                Destroy(blueBallClone, 10f);
+                Destroy(redBallClone, _destroyBallsTimer);
+                Destroy(blueBallClone, _destroyBallsTimer);
             }
         }
     }

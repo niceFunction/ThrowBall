@@ -5,85 +5,58 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
 
-    [SerializeField]
-    float speed;
     public float respawnInterval = 20;
-    [SerializeField]
-    Transform startPoint, endPoint;
-    [SerializeField]
-    float changeDirectionDelay;
-
-    private Transform destinationTarget, departTarget;
-    private float startTime;
-    private float journeyLength;
-    bool isWaiting;
-    public bool isStatic;
     public bool willRespawn = true;
-
+    public Transform target;
+    public float speed;
+    public bool moveObj = true;
+    private bool _targetReached;
+    private bool _startReached;
+    private Vector3 _startPosition;
 
     void Start()
     {
-        departTarget = startPoint;
-        destinationTarget = endPoint;
-
-        startTime = Time.time;
-        journeyLength = Vector3.Distance(departTarget.position, destinationTarget.position);
-
-        startPoint.parent = null;
-        endPoint.parent = null;
+        target.parent = null;
+        _startPosition = this.gameObject.transform.position;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (!isStatic) { 
-            Move();
+        if (moveObj == true && _targetReached == false)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        }
+        if (moveObj == true && _targetReached == true)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, _startPosition, step);
+        }
+
+        if (!_targetReached)
+        {
+            if (Vector3.Distance(transform.position, target.position) > 0.01f)
+            {
+                // Moving
+            }
+            else
+            {
+                _startReached = false;
+                _targetReached = true;
+            }
+        }
+        if (_targetReached && !_startReached)
+        {
+            if (Vector3.Distance(transform.position, _startPosition) > 0.01f)
+            {
+                // Moving
+            }
+            else
+            {
+                _startReached = true;
+                _targetReached = false;
+            }
         }
     }
-
-    private void Move()
-    {
-
-
-        if (Vector3.Distance(transform.position, destinationTarget.position) > 0.01f)
-        {
-            float distCovered = (Time.time - startTime) * speed;
-
-            float fractionOfJourney = distCovered / journeyLength;
-
-            transform.position = Vector3.Lerp(departTarget.position, destinationTarget.position, fractionOfJourney);
-        }
-        else
-        {
-            isWaiting = true;
-            StartCoroutine(changeDelay());
-        }
-
-
-    }
-
-    void ChangeDestination()
-    {
-
-        if (departTarget == endPoint && destinationTarget == startPoint)
-        {
-            departTarget = startPoint;
-            destinationTarget = endPoint;
-        }
-        else
-        {
-            departTarget = endPoint;
-            destinationTarget = startPoint;
-        }
-
-    }
-    IEnumerator changeDelay()
-    {
-        yield return new WaitForSeconds(changeDirectionDelay);
-        ChangeDestination();
-        startTime = Time.time;
-        journeyLength = Vector3.Distance(departTarget.position, destinationTarget.position);
-        isWaiting = false;
-    }
-
 
 }

@@ -19,6 +19,7 @@ public class UIController : MonoBehaviour
     public GameObject FPSarms;
 
     public GameObject endScreen;
+    public GameObject pauseScreen;
     public TextMeshProUGUI endPoints;
 
     /* RED FIRST TIME ANIMATION */
@@ -54,6 +55,7 @@ public class UIController : MonoBehaviour
         blueBall.SetActive(false);
         redBall.SetActive(false);
         endScreen.SetActive(false);
+        pauseScreen.SetActive(false);
 
         _animRed = redPickupAnim.GetComponent<Animation>();
         _animBlue = bluePickupAnim.GetComponent<Animation>();
@@ -172,43 +174,39 @@ public class UIController : MonoBehaviour
         redBall.SetActive(false);
     }
 
-    public void LevelFinish(float seconds)
-    {
-        //Time.timeScale = 0;
-        //int timeSec = MainGameManager.Main.timeComponent.startTime - (int)MainGameManager.Main.timeComponent.Timer;
-        //highScoreText.text = timeSec.ToString() + " seconds";
-        //finishText.text = endLevelText;
-    }
-
     public void PauseGame()
     {
-        if (_isPaused)
+        if (!_isFinished)
+        {
+            if (_isPaused)
+            {
+                Time.timeScale = 1;
+                _isPaused = false;
+                AudioManager.Instance.bgm.Play();
+                pauseScreen.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                AudioManager.Instance.bgm.Pause();
+                pauseScreen.SetActive(true);
+                _isPaused = true;
+            }
+        } else
         {
             Time.timeScale = 1;
-            _isPaused = false;
-            //finishText.text = "";
-            //pauseButtons.SetActive(false);
-            //playerInput.UnpauseComponents();
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+            _isFinished = false;
         }
-        else
-        {
-            //finishText.text = "PAUSE";
-            //pauseButtons.SetActive(true);
-            Time.timeScale = 0;
-            _isPaused = true;
-            //playerInput.PauseComponents();
-        }
-
     }
 
     public void EndGame()
     {
+        pauseScreen.SetActive(false);
         string pointsText = "Final score is " + highScore.ToString() + " points";
         endPoints.SetText(pointsText);
         endScreen.SetActive(true);
-        
-        Time.timeScale = 1;
-        
+        _isFinished = true;
         Time.timeScale = 0;
         AudioManager.Instance.bgm.Stop();
         if (AudioManager.Instance.levelEndMusic.isPlaying == false)

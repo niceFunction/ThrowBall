@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
             _playerVelocity.y += Mathf.Sqrt(_jumpHeight * -3.0f * _gravityValue);
         }
 
+        if (_inputManager.PlayerPausedGame())
+        {
+            UIController.Instance.PauseGame();
+        }
+
         _playerVelocity.y += _gravityValue * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
 

@@ -60,4 +60,9 @@ public class InputManager : MonoBehaviour
     {
         return _playerControl.Player.Shoot_Blue.triggered;
     }
+
+    public bool PlayerPausedGame()
+    {
+        return _playerControl.Player.PauseGame.triggered;
+    }
 }

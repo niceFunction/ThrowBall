@@ -57,6 +57,14 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""3421b72c-bc52-49ae-9d99-f936c49d22f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -158,6 +166,17 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                     ""action"": ""Shoot_Blue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ee27f4f-c5c2-4831-ae00-72b708329d2c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -171,6 +190,7 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Shoot_Red = m_Player.FindAction("Shoot_Red", throwIfNotFound: true);
         m_Player_Shoot_Blue = m_Player.FindAction("Shoot_Blue", throwIfNotFound: true);
+        m_Player_PauseGame = m_Player.FindAction("PauseGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -225,6 +245,7 @@ public class @PlayerControl : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Shoot_Red;
     private readonly InputAction m_Player_Shoot_Blue;
+    private readonly InputAction m_Player_PauseGame;
     public struct PlayerActions
     {
         private @PlayerControl m_Wrapper;
@@ -234,6 +255,7 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Shoot_Red => m_Wrapper.m_Player_Shoot_Red;
         public InputAction @Shoot_Blue => m_Wrapper.m_Player_Shoot_Blue;
+        public InputAction @PauseGame => m_Wrapper.m_Player_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +280,9 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                 @Shoot_Blue.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
                 @Shoot_Blue.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
                 @Shoot_Blue.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot_Blue;
+                @PauseGame.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseGame;
+                @PauseGame.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPauseGame;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -277,6 +302,9 @@ public class @PlayerControl : IInputActionCollection, IDisposable
                 @Shoot_Blue.started += instance.OnShoot_Blue;
                 @Shoot_Blue.performed += instance.OnShoot_Blue;
                 @Shoot_Blue.canceled += instance.OnShoot_Blue;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
             }
         }
     }
@@ -288,5 +316,6 @@ public class @PlayerControl : IInputActionCollection, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnShoot_Red(InputAction.CallbackContext context);
         void OnShoot_Blue(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
 }

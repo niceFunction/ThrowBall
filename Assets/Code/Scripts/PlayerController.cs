@@ -61,4 +61,23 @@ public class PlayerController : MonoBehaviour
         _controller.Move(_playerVelocity * Time.deltaTime);
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("MovingPlatform"))
+        {
+            transform.parent = other.transform;
+
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("MovingPlatform"))
+        {
+            transform.parent = null;
+
+        }
+    }
 }

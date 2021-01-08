@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Personal/FinalGameScene.unity
+    guid: ab9cb16b99dd70e4ba389282cb5e4e43
   m_configObjects: {}

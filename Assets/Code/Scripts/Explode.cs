@@ -11,7 +11,7 @@ public class Explode : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(_explosionEffect, transform.position, Quaternion.identity);
-        Destroy(_explosionEffect, _destroyParticleTimer);
+        GameObject explosionEffectClone = Instantiate(_explosionEffect, transform.position, Quaternion.identity);
+        Destroy(explosionEffectClone, _destroyParticleTimer);
     }
 }

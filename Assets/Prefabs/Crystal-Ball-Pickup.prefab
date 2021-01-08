@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 698229062}
   - component: {fileID: 2102228087404943830}
   - component: {fileID: -7014399203468471648}
+  - component: {fileID: 1194263156056173552}
   m_Layer: 0
   m_Name: Crystal-Ball-Pickup
   m_TagString: Untagged
@@ -204,6 +205,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _explosionEffect: {fileID: 7238107038752304732, guid: fa78ad308454ef741909a0b34dbdd420, type: 3}
   _destroyParticleTimer: 7
+--- !u!111 &1194263156056173552
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3991308589034483978}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 3a74d683e0b34ba4dbfecb3824f3fd76, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 3a74d683e0b34ba4dbfecb3824f3fd76, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5395650695948265332
 GameObject:
   m_ObjectHideFlags: 0

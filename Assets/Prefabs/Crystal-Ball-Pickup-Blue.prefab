@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &2349040100218488336
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5420404917543129036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &417985140400497898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29,6 +16,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &2349040100218488336
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420404917543129036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7457164866548925583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60,6 +60,26 @@ PrefabInstance:
       propertyPath: m_Color.g
       value: 0.61211824
       objectReference: {fileID: 0}
+    - target: {fileID: 1194263156056173552, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1194263156056173552, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 5521d7595618dea49819e33d1f839202, type: 2}
+    - target: {fileID: 1194263156056173552, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5521d7595618dea49819e33d1f839202, type: 2}
+    - target: {fileID: 1194263156056173552, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Animations.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5521d7595618dea49819e33d1f839202, type: 2}
+    - target: {fileID: 1194263156056173552, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 5521d7595618dea49819e33d1f839202, type: 2}
     - target: {fileID: 3991308589034483976, guid: 3590d77b1f0274c4d9836e98f94d9820, type: 3}
       propertyPath: m_Radius
       value: 0.8

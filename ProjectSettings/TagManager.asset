@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RedBall
   - BlueBall
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX

@@ -866,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2823648180476396726, guid: ada8f199765e9be4c9255edd8d980881, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2823648180476396726, guid: ada8f199765e9be4c9255edd8d980881, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -897,6 +897,14 @@ PrefabInstance:
       propertyPath: _destroyBallsTimer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3725122698646302706, guid: 6a7bcf3b7e973ab45bf08427fb9f350a, type: 3}
+      propertyPath: _redExplosionEffect
+      value: 
+      objectReference: {fileID: 7238107038752304732, guid: fa78ad308454ef741909a0b34dbdd420, type: 3}
+    - target: {fileID: 3725122698646302706, guid: 6a7bcf3b7e973ab45bf08427fb9f350a, type: 3}
+      propertyPath: _blueExplosionEffect
+      value: 
+      objectReference: {fileID: 2370031986208799691, guid: 531f9f6357423774eaa9b07447639441, type: 3}
     - target: {fileID: 3725122698646302707, guid: 6a7bcf3b7e973ab45bf08427fb9f350a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

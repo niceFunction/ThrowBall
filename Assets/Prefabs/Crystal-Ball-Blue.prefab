@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 166957176858640737}
   - component: {fileID: 8892626507389072956}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Trail Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 3991308589034483977}
   - component: {fileID: 1649216743203693096}
   - component: {fileID: 1024761187026023417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Crystal-Ball-Blue
   m_TagString: BlueBall
   m_Icon: {fileID: 0}

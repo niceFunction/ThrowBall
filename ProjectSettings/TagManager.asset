@@ -17,9 +17,9 @@ TagManager:
   - 
   - 
   - Level
-  - 
-  - 
-  - 
+  - BlockPickupWall
+  - Pickup
+  - Throwable
   - 
   - 
   - 

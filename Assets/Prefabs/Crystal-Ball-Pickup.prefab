@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213950998965529410}
   - component: {fileID: 1855560338101322266}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Solid Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2102228087404943830}
   - component: {fileID: -7014399203468471648}
   - component: {fileID: 1194263156056173552}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crystal-Ball-Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 82588056147365798}
   - component: {fileID: 460783637132763577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
